@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout Page</title>
+    <link rel="stylesheet" href="{% static 'blogs/css/logout.css' %}">
+</head>
+<body>
+    <div class="alert alert-info">
+       <h2>You have been logged out of the session</h2> 
+        <div class="links">
+            <a href="{% url 'RegisterPage' %}">Sign Up</a>
+            <a href="{% url 'LoginPage' %}">Login</a>
+        </div>
+    </div>
+</body>
+</html>

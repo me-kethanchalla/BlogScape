@@ -1,0 +1,137 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column; /* Modified to allow stacking of navbar and form-container */
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #88b8df;
+}
+
+.navbar { /* Added navbar styles */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3c2a2a63;
+  padding: 10px 20px;
+  width: 100%; /* Ensures navbar spans full width */
+  box-sizing: border-box;
+}
+
+.navbar-brand {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #fff;
+  margin: 0;
+  font-size: 40px;
+}
+
+.navbar-menu {
+  list-style-type: none;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-menu li,
+.navbar-menu form {
+  margin: 0 10px;
+}
+
+/* Styling for the link and button to look the same */
+.navbar-menu a,
+.navbar-menu button {
+  display: inline-block;
+  background-color: #555;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-menu a:hover,
+.navbar-menu button:hover {
+  background-color: #777;
+}
+
+/* Ensuring the button looks like a link */
+.navbar-menu button {
+  cursor: pointer;
+  font-size: small;
+  
+}
+
+.navbar-menu form {
+  display: inline;
+}
+
+.form-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px; /* Added margin to separate form-container from navbar */
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input.form-control,
+textarea.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+textarea.form-control {
+  resize: vertical; /* Allows vertical resizing but prevents horizontal resizing */
+}
+
+button {
+  background-color: #007fc3;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #22416d;
+}
+
+p {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+a {
+  color: #007fc3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'blogs/css/home.css' %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-brand">BlogScape</div>
+        <ul class="navbar-menu">
+            <li><a href="{%url 'BlogPage'%}">Home</a></li>
+            <li><a href="{%url 'ProfilePage'%}">Profile</a></li>
+            <form action="{% url 'LogoutPage' %}" method="post">
+                {% csrf_token %} 
+                <button type="submit">Logout</button>
+            </form>
+            
+        </ul>
+    </nav>
+
+<div class= "container">
+    <div class="write">
+        <a href="{%url 'WriteBlogPage'%}" class="write-button">WRITE A BLOG</a>
+    </div>
+</div>
+    {% block content %}
+    {% for i in post %}
+    <div class="blogpost">
+        <div class="title">
+            <u><h2>{{i.title}}</h2></u>
+            <br>
+        </div>
+
+        <div class="content">
+            {{i.content}}
+        </div>
+            
+        <div class="other_details">
+             By {{i.author_name}}<br>
+
+             <small>On {{i.time}}</small><br>
+        </div>
+    </div>
+    {% endfor %}
+    {% endblock content %}
+    <div class= 'note'>
+        <u><b>NOTE: </b></u>
+        &ensp;
+<small>
+    You are viewing the blogs in the reverse chronological order.
+</small>
+</div>
+</body>
+</html>

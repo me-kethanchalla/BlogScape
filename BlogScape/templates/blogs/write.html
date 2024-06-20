@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compose Blog</title>
+    <link rel="stylesheet" href="{% static 'blogs/css/write.css' %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-brand">BlogScape</div>
+        <ul class="navbar-menu">
+            <li><a href="{%url 'BlogPage'%}">Home</a></li>
+            <li><a href="{%url 'ProfilePage'%}">Profile</a></li>
+            <form action="{% url 'LogoutPage' %}" method="post">
+                {% csrf_token %} 
+                <button type="submit">Logout</button>
+            </form>
+            
+        </ul>
+    </nav>
+
+    <div class="form-container">
+        <h2><i><u>Write your blog !</u></i></h2>
+        <form  method="POST">
+            {%csrf_token%}
+          {{ form.as_p }}
+          <button type="submit">Publish</button>
+        </form>
+    </div>
+
+</body>
+</html>
