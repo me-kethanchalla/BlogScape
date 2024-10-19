@@ -5,15 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logout Page</title>
-    <link rel="stylesheet" href="{% static 'blogs/css/logout.css' %}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'blogs/css/logout3.css' %}">
 </head>
 <body>
-    <div class="alert alert-info">
-       <h2>You have been logged out of the session</h2> 
+    <div class="pointer" id="pointer"></div>
+    
+    <div class="alert-container">
+        <h1>Logged Out Successfully</h1>
+        <div class="door-animation">
+            <div class="element-exit">👤</div> <!-- This represents the user exiting -->
+            <div class="door"></div> <!-- The closing door -->
+        </div>
+        
+        
+        <h3>Want to Visit BlogScape Again?</h3> 
         <div class="links">
-            <a href="{% url 'RegisterPage' %}">Sign Up</a>
-            <a href="{% url 'LoginPage' %}">Login</a>
+            <a href="{% url 'RegisterPage' %}" class="btn-link">Sign Up</a>
+            <a href="{% url 'LoginPage' %}" class="btn-link">Login</a>
         </div>
     </div>
+
+    <script src="{% static 'blogs/js/pointer2.js' %}"></script>
 </body>
 </html>

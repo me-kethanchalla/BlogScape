@@ -6,54 +6,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="{% static 'blogs/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'blogs/css/home3.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="navbar-brand">BlogScape</div>
         <ul class="navbar-menu">
-            <li><a href="{%url 'BlogPage'%}">Home</a></li>
-            <li><a href="{%url 'ProfilePage'%}">Profile</a></li>
+            <li><a href="{% url 'BlogPage' %}">Home</a></li>
+            <li><a href="{% url 'ProfilePage' %}">Profile</a></li>
             <form action="{% url 'LogoutPage' %}" method="post">
-                {% csrf_token %} 
+                {% csrf_token %}
                 <button type="submit">Logout</button>
             </form>
-            
         </ul>
     </nav>
 
-<div class= "container">
-    <div class="write">
-        <a href="{%url 'WriteBlogPage'%}" class="write-button">WRITE A BLOG</a>
+    <div class="container">
+        <div class="write">
+            <a href="{% url 'WriteBlogPage' %}" class="write-button">WRITE A BLOG</a>
+        </div>
     </div>
-</div>
+
     {% block content %}
     {% for i in post %}
     <div class="blogpost">
         <div class="title">
-            <u><h2>{{i.title}}</h2></u>
+            <h2>{{ i.title }}</h2>
             <br>
         </div>
 
         <div class="content">
-            {{i.content}}
+            {{ i.content }}
         </div>
             
         <div class="other_details">
-             By {{i.author_name}}<br>
-
-             <small>On {{i.time}}</small><br>
+             By {{ i.author_name }}<br>
+             <small>On {{ i.time }}</small><br>
         </div>
     </div>
     {% endfor %}
     {% endblock content %}
-    <div class= 'note'>
+    
+    <div class="note">
         <u><b>NOTE: </b></u>
         &ensp;
-<small>
-    You are viewing the blogs in the reverse chronological order.
-</small>
-</div>
+        <small>You are viewing the blogs in reverse chronological order.</small>
+    </div>
 </body>
 </html>

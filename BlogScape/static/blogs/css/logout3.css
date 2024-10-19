@@ -1,0 +1,138 @@
+/* logout.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #71bae1, #f77878dc);
+    /* background-size: 400% 400%; */
+    /* animation: gradientShift 15s ease infinite; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+} */
+
+.alert-container {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeInAlert 1s ease-out;
+    position: relative;
+}
+
+@keyframes fadeInAlert {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #396d89; /* Updated heading color */
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+/* Door animation */
+.door-animation {
+    position: relative;
+    height: 150px; /* Shortened the door height */
+    margin: 1.5rem auto;
+    width: 100px;
+    border: 2px solid #4d7e99;
+    box-shadow: 10px 28px 30px rgba(0, 0, 0, 0.2);
+    /* Updated border color */
+    overflow: hidden;
+}
+
+.element-exit {
+    font-size: 3rem;
+    position: absolute;
+    left: 10px;
+    top: 50px; /* Adjusted position to match the new door height */
+    animation: exit 6s ease forwards;
+}
+
+.door {
+    width: 100px;
+    height: 100%;
+    background-color:#71bae1; /* Updated door color */
+    position: absolute;
+    right: -50px; /* Start from outside the frame */
+    animation: closeDoor 6s ease forwards;
+}
+
+@keyframes exit {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(60px); }
+    100% { transform: translateX(150px); opacity: 0; }
+}
+
+@keyframes closeDoor {
+    0% { right: -80px; }
+    100% { right: 0px; }
+}
+
+.links {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.btn-link {
+    padding: 0.9rem 1.5rem;
+    background-color:  #f77878dc ; /* Updated button background color */
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-link:hover {
+    background-color:#71bae1; /* Updated hover color */
+    transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .alert-container {
+        padding: 2rem;
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .btn-link {
+        font-size: 1rem;
+        padding: 0.8rem 1.2rem;
+    }
+}

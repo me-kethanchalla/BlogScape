@@ -5,18 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Register</title>
-    <link rel="stylesheet" href="{%static 'blogs/css/register.css' %}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'blogs/css/register4.css' %}">
 </head>
 <body>
+    <div class="welcome-container">
+        <h1>Join BlogScape Today!</h1>
+    </div>
+    
     <div class="form-container">
-        <h2><u>SignUp Page</u></h2>
-        <form  method="POST">
-          {%csrf_token%}
-          {{ form.as_p }}
-          <button type="submit">Sign Up</button>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Sign Up</button>
         </form>
         <p>Already have an account? <a href="{% url 'LoginPage' %}">Login here</a></p>
-
     </div>
 </body>
 </html>

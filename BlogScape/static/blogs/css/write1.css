@@ -1,33 +1,35 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #71bae1, #f77878dc);
+  color: #333;
   display: flex;
-  flex-direction: column; /* Modified to allow stacking of navbar and form-container */
+  flex-direction: column; /* Ensures navbar and form stack vertically */
   align-items: center;
   height: 100vh;
-  margin: 0;
-  background-color: #88b8df;
 }
 
-.navbar { /* Added navbar styles */
+/* Navbar styles */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #3c2a2a63;
-  padding: 10px 20px;
-  width: 100%; /* Ensures navbar spans full width */
+  background-color: #757e85;
+  padding: 15px 20px;
+  width: 100%;
   box-sizing: border-box;
 }
 
 .navbar-brand {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #fff;
-  margin: 0;
   font-size: 40px;
+  margin: 0;
 }
 
 .navbar-menu {
   list-style-type: none;
-  font-size: 15px;
   margin: 0;
   padding: 0;
   display: flex;
@@ -39,48 +41,43 @@ body {
   margin: 0 10px;
 }
 
-/* Styling for the link and button to look the same */
 .navbar-menu a,
 .navbar-menu button {
   display: inline-block;
   background-color: #555;
   color: #fff;
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border: none;
   border-radius: 4px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-menu a:hover,
 .navbar-menu button:hover {
-  background-color: #777;
+  background-color: #f77878dc;
+  transform: scale(1.1);
 }
 
-/* Ensuring the button looks like a link */
 .navbar-menu button {
   cursor: pointer;
   font-size: small;
-  
-}
-
-.navbar-menu form {
-  display: inline;
 }
 
 .form-container {
-  background: #fff;
+  background-color: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   max-width: 400px;
   width: 100%;
   text-align: center;
-  margin-top: 20px; /* Added margin to separate form-container from navbar */
+  margin-top: 20px;
 }
 
 h2 {
   margin-bottom: 20px;
+  color: #3a6186;
 }
 
 .form-group {
@@ -105,21 +102,23 @@ textarea.form-control {
 }
 
 textarea.form-control {
-  resize: vertical; /* Allows vertical resizing but prevents horizontal resizing */
+  resize: vertical;
 }
 
 button {
-  background-color: #007fc3;
+  background-color: #f77878dc;
   color: #fff;
-  border: none;
   padding: 10px 20px;
-  border-radius: 4px;
+  border: none;
+  border-radius: 8px;
   font-size: 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-  background-color: #22416d;
+  background-color: #71bae1;
+  transform: scale(1.05);
 }
 
 p {
@@ -134,4 +133,23 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar-menu {
+      flex-direction: column;
+  }
+
+  .navbar-menu li {
+      margin: 10px 0;
+  }
+
+  .form-container {
+      padding: 15px;
+  }
+
+  h2 {
+      font-size: 1.5em;
+  }
 }

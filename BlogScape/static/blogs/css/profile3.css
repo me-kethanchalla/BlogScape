@@ -1,0 +1,201 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #71bae1, #f77878dc);
+    color: #333;
+}
+
+/* General navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #757e85; /* Updated to match the previous theme */
+    padding: 15px 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    margin: 0;
+    font-size: 40px;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-menu li,
+.navbar-menu form {
+    margin: 0 15px;
+}
+
+/* Styling for links and buttons to have uniform look */
+.navbar-menu a,
+.navbar-menu button {
+    display: inline-block;
+    background-color: #555;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-menu a:hover,
+.navbar-menu button:hover {
+    background-color: #f77878dc;
+    transform: scale(1.1);
+}
+
+/* Ensuring button looks clickable */
+.navbar-menu button {
+    cursor: pointer;
+}
+
+.navbar-menu form {
+    display: inline;
+}
+
+/* Profile container styling */
+.profile-container {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.profile-container:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: #3a6186; /* Color to match the theme */
+}
+
+p {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    color: #494646;
+}
+
+/* Form inline styling */
+.form-inline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-control {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #cac8c8;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-control:focus {
+    border-color: #f77878dc;
+    outline: none;
+    box-shadow: 0 0 8px rgba(137, 37, 62, 0.5);
+}
+.blogpost {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.blogpost:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.blogpost .title {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.blogpost .title h2 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #3a6186;
+}
+
+.blogpost .content {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #494646;
+}
+
+.blogpost .other_details {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #617077;
+    text-align: right;
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
+    padding: 0.8rem;
+    background-color: #f77878dc;
+    color: #fff;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #71bae1;
+    transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar-menu {
+        flex-direction: column;
+    }
+
+    .navbar-menu li {
+        margin: 10px 0;
+    }
+
+    .profile-container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    
+    .form-control {
+        max-width: 100%;
+    }
+}

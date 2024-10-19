@@ -6,7 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel="stylesheet" href="{% static 'blogs/css/profile.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'blogs/css/profile3.css' %}">
+    
 </head>
 <body>
     <nav class="navbar">
@@ -21,10 +23,34 @@
     </nav>
 
     <div class="profile-container">
-        <h2><u>Profile Information</u></h2>
-        <p>Username: {{ user.username }}</p>
+        <h2><u>Profile Info :</u> @{{ user.username }}</h2>
+        <!-- <h2>{{ user.username }}</h2> -->
+
         <p>Email: {{ user.email }}</p>
+        <p>
+            Blogs Published : {{ total}}
+        </p>
        
     </div>
+    
+    {% block content %}
+    {% for i in blog_by_author %}
+    <div class="blogpost">
+        <div class="title">
+            <h2>{{ i.title }}</h2>
+            <br>
+        </div>
+
+        <div class="content">
+            {{ i.content }}
+        </div>
+            
+        <div class="other_details">
+             <small>On {{ i.time }}</small><br>
+        </div>
+    </div>
+    {% endfor %}
+    {% endblock content %}
+    
 </body>
 </html>
