@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Blogs</title>
+    <link rel="stylesheet" href="{% static 'blogs/css/search.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-brand">BlogScape</div>
+        <ul class="navbar-menu">
+            <li><a href="{% url 'BlogPage' %}">Home</a></li>
+            <li><a href="{% url 'ProfilePage' request.user.username %}">Profile</a></li>
+            <form action="{% url 'LogoutPage' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+        <div class="search-container">
+            <h2>Search Blogs</h2>
+            <form method="GET" action="{% url 'SearchPage' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Search</button>
+            </form>
+        </div>
+       
+
+        {% if searched_yet %}
+        <div class="results-container">
+            <div class="results-section">
+                <h3>Blog Results:</h3>
+                {% if results_in_blogs %}
+                    <ul>
+                        {% for post in results_in_blogs %}
+                            <li>
+                                <a href="{% url 'BlogDetail' post.id %}">{{ post.title }}</a>
+                            </li>
+                            <hr>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No results found.</p>
+                {% endif %}
+            </div>
+
+            <div class="results-section">
+                <h3>Author Results:</h3>
+                {% if results_in_authors %}
+                    <ul>
+                        {% for author in results_in_authors %}
+                            <li>
+                                <a href="{% url 'ProfilePage' author.username  %}">{{ author.username }}</a> 
+                            </li>
+                            <hr>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No results found.</p>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

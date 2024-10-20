@@ -26,19 +26,37 @@ def register ( request):
 
     
 
-def profile (request) :
-    user_self =  request.user.username 
+def profile (request,username1) :
+    user_self =  request.user.username  
     user = User.objects.get(username=user_self) 
-    blogs_by_user = blog.objects.filter(author_name = user)
-    total = 0
-    for i in blogs_by_user  :
-        total = total + 1
-    
-    
-    context = {
-    'blog_by_author' :  blogs_by_user,
-    'total' : total
-    }
+    user1 = User.objects.filter( username=  username1).first()
+    # if user1 is None:
+    #     # Handle the case where the user profile being viewed does not exist
+    #     return render(request, 'user/profile_not_found.html', {'username': username1}) 
+
+    if user_self == username1 :
+        blogs_by_user = blog.objects.filter(author_name = user)
+        total = blogs_by_user.count()
+        
+        
+        context = {
+        'blog_by_author' :  blogs_by_user,
+        'total' : total,
+        'username' : user_self,
+        'email' : request.user.email
+        }
+    else:
+        blogs_by_user = blog.objects.filter(author_name = user1)
+        total = blogs_by_user.count()
+
+        context = {
+        'blog_by_author' :  blogs_by_user,
+        'total' : total,
+        'username' : username1, 
+        'email' :None
+
+        }
+
     return render (request, 'user/profile.html', context )
 
 

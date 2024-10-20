@@ -14,8 +14,9 @@
     <nav class="navbar">
         <div class="navbar-brand">BlogScape</div>
         <ul class="navbar-menu">
+            <li><a href="{% url 'SearchPage'%}" >Search</a></li>
             <li><a href="{% url 'BlogPage' %}">Home</a></li>
-            <li><a href="{% url 'ProfilePage' %}">Profile</a></li>
+            <li><a href="{% url 'ProfilePage' request.user.username %}">Profile</a></li>
             <form action="{% url 'LogoutPage' %}" method="post">
                 {% csrf_token %}
                 <button type="submit">Logout</button>

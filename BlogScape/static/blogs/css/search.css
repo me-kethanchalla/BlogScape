@@ -1,0 +1,167 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #71bae1, #f77878dc);
+    color: #333;
+}
+
+/* General navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #757e85;
+    padding: 15px 20px;
+}
+
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    margin: 0px;
+    font-size: 40px;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-menu li {
+    margin: 0 15px;
+}
+
+/* Styling for the link and button to look the same */
+.navbar-menu a,
+.navbar-menu button {
+    display: inline-block;
+    background-color: #555;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+.navbar-menu a:hover,
+.navbar-menu button:hover {
+    background-color: #f77878dc;
+    transform: scale(1.1);
+}
+
+/* Ensuring the button looks like a link */
+.navbar-menu button {
+    cursor: pointer;
+}
+
+.navbar-menu form {
+    display: inline;
+}
+
+
+/* Container for the results sections */
+.results-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Individual results section */
+.results-section {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    flex: 1; /* Allows the sections to take equal space */
+    max-width: 45%; /* Ensure they don't exceed half of the container */
+}
+
+/* Header for the sections */
+h3 {
+    margin-bottom: 10px;
+    color: #3a6186; /* Consistent with your theme */
+}
+
+/* List styling */
+.results-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.results-section li {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Link styling */
+.results-section a {
+    text-decoration: none;
+    color: #3a6186;
+    transition: color 0.3s ease;
+}
+
+.results-section a:hover {
+    color: #f77878dc; /* Change to a theme color on hover */
+}
+
+/* Button styling for the search button */
+button {
+    font-family: 'Poppins', sans-serif;
+    padding: 0.8rem;
+    background-color: #f77878dc;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #71bae1;
+    transform: scale(1.05);
+}
+/* Centering the search container */
+.search-container {
+    display: flex;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    flex-direction: column; /* Stack label and form vertically */
+    align-items: center; /* Center items horizontally */
+   
+}
+
+
+
+/* Styling for the search form elements */
+.search-container form {
+    display: flex;
+    flex-direction: column; /* Stack input and button vertically */
+    align-items: center; /* Center input and button */
+}
+
+.search-container button {
+    margin-top: 10px; /* Add space between input and button */
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .results-container {
+        flex-direction: column; /* Stack sections on smaller screens */
+    }
+
+    .results-section {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+}

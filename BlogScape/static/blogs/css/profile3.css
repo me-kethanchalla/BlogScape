@@ -81,14 +81,14 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-h2 {
+.profile-container h2 {
     margin-bottom: 20px;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.8rem;
     color: #3a6186; /* Color to match the theme */
 }
 
-p {
+.profile-container p {
     margin: 15px 0;
     font-size: 1.1rem;
     color: #494646;
@@ -116,8 +116,7 @@ p {
     border-color: #f77878dc;
     outline: none;
     box-shadow: 0 0 8px rgba(137, 37, 62, 0.5);
-}
-.blogpost {
+}.blogpost {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 12px;
@@ -149,14 +148,55 @@ p {
     line-height: 1.6;
     color: #494646;
 }
-
 .blogpost .other_details {
     border-top: 1px solid #ddd;
     padding-top: 10px;
     margin-top: 10px;
     font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
     color: #617077;
+}
+
+/* Styling for the Show Comments button */
+.show-comments {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    margin-right: auto; /* Align to the left */
+    text-decoration: none;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.show-comments:hover {
+    background-color:#f77878dc;
+    color: #fff;
+}
+
+/* Author name and time styling */
+.author-details {
     text-align: right;
+    font-size: 0.85rem;
+    color: #333;
+}
+
+.author-details .author-name,
+.author-details .post-time {
+    display: block; /* Display name and time in separate lines */
+}
+.note {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.container {
+    text-align: center;
 }
 
 button {
@@ -164,7 +204,8 @@ button {
     padding: 0.8rem;
     background-color: #f77878dc;
     color: #fff;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    margin-left: 10px;
     border: none;
     border-radius: 8px;
     cursor: pointer;

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect,get_object_or_404
 from .models import blog
-from .forms import blogform, commentForm
+from user.models import User
+from .forms import blogform, commentForm, SearchForm
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 
@@ -57,3 +58,27 @@ def blog_detail(request, blog_id):
     }        
 
     return render(request, 'blogs/detail.html', context)
+
+
+def search ( request ):
+    form = SearchForm()
+    results_in_blogs = []    
+    results_in_authors = []    
+
+    if request.method == 'GET' :
+        query = request.GET.get('query')
+        if query:
+            results_in_blogs = blog.objects.filter(title__icontains=query)
+            results_in_authors = User.objects.filter(username__icontains=query)
+
+        context  = { 'form': form, 'results_in_blogs':results_in_blogs, 'results_in_authors' :results_in_authors, 'searched_yet':True }
+
+    else :
+        context = { 'form': form,'results_in_blogs':results_in_blogs, 'results_in_authors' :results_in_authors, 'searched_yet' : False}
+        
+
+    return render (request, 'blogs/search.html', context)   
+
+
+
+

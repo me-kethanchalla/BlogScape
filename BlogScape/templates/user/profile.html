@@ -14,7 +14,9 @@
     <nav class="navbar">
         <div class="navbar-brand">BlogScape</div>
         <ul class="navbar-menu">
+            <li><a href="{% url 'SearchPage'%}" >Search</a></li>
             <li><a href="{% url 'BlogPage' %}">Home</a></li>
+            
             <form action="{% url 'LogoutPage' %}" method="post">
                 {% csrf_token %} 
                 <button type="submit">Logout</button>
@@ -23,10 +25,11 @@
     </nav>
 
     <div class="profile-container">
-        <h2><u>Profile Info :</u> @{{ user.username }}</h2>
+        <h2><u>Profile Info :</u> {{ username }}</h2>
         <!-- <h2>{{ user.username }}</h2> -->
-
-        <p>Email: {{ user.email }}</p>
+        {% if email %}
+        <p>Email: {{ email }}</p>
+        {% endif %}
         <p>
             Blogs Published : {{ total}}
         </p>
@@ -46,7 +49,10 @@
         </div>
             
         <div class="other_details">
-             <small>On {{ i.time }}</small><br>
+            <a href="{% url 'BlogDetail' i.id %}" class="show-comments">Show Comments</a>
+            <div class="author-details">
+                <span class="post-time"><small>On {{ i.time }}</small></span>
+            </div>
         </div>
     </div>
     {% endfor %}
