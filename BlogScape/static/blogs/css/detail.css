@@ -2,11 +2,11 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    /* background-color: #88b8df; */
     background: linear-gradient(135deg, #71bae1, #f77878dc);
     color: #333;
 }
 
+/* General navbar styling */
 /* General navbar styling */
 .navbar {
     display: flex;
@@ -66,13 +66,19 @@ body {
     display: inline;
 }
 
+/* Blog post styling */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
 .blogpost {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 12px;
     margin: 20px auto;
     padding: 20px;
-    max-width: 800px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
 }
@@ -108,54 +114,93 @@ body {
     text-align: right;
 }
 
-.note {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
+/* Add Comment form styling */
+.add-comment-form {
+    text-align: center; /* Center the add comment form */
+    margin: 10px 0;
+}
+.add-comment-form input,
+.add-comment-form textarea {
+    width: 80%; /* Control the width of the input and textarea fields */
+    padding: 10px; /* Reduce padding */
+    font-size: 0.9rem; /* Adjust font size */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px; /* Space between fields */
+    box-sizing: border-box; /* Ensure padding doesn't affect overall width */
 }
 
-.container {
-    text-align: center;
+.add-comment-form textarea {
+    height: 80px; /* Control the height of the textarea */
+    resize: vertical; 
 }
 
-.write-button {
-    display: inline-block;
-    text-align: center;
-    padding: 1rem 2rem;
-    margin: 20px;
-    font-size: 1.1rem;
-    color: rgb(53, 53, 53);
-    background-color: #ece7e7;
-    text-decoration: none;
-    border: 5px solid #4e4e4e;
-    font-family: 'Montserrat', sans-serif;
-    border-radius: 5px;
-    box-shadow: #333;
-    transition: background-color 0.3s;
-}
 
-.write-button:hover {
-    background-color: #928181;
-}
-
-button {
+.submit-button {
     font-family: 'Poppins', sans-serif;
-    padding: 0.8rem;
-    background-color: #f77878dc;
+    padding: 0.8rem 1.5rem;
+    background-color: #4e4e4e; /* Darker background for the button */
     color: #fff;
     font-size: 1rem;
-    margin-left: 10px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button:hover {
-    background-color: #71bae1;
+.submit-button:hover {
+    background-color: #f77878dc; /* Change color on hover */
     transform: scale(1.05);
 }
+
+/* Comments section styling */
+.comments-section {
+    background-color: #fff; /* White background for the comments box */
+    border: 1px solid #ddd;
+    border-radius: 12px; /* Rounded corners */
+    padding: 20px; /* Padding for the box */
+    margin-top: 20px; /* Space above the comments box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: box-shadow 0.3s ease;
+    text-align: left; /* Align text inside the comments box */
+    overflow: hidden; /* Prevent content overflow */
+    word-wrap: break-word; /* Ensure long words wrap correctly */
+}
+
+.comments-heading {
+    text-align: center; /* Center the comments heading */
+    font-size: 1.9em; /* Larger font size for the heading */
+    color: #3a6186; /* Color for the heading */
+    margin-bottom: 20px; /* Margin below the heading */
+}
+
+.comments {
+    margin-top: 20px;
+}
+
+.comments strong {
+    display: block; /* Ensure the username is on its own line */
+    color: #3a6186;
+    margin-top: 10px;
+}
+
+.comments p {
+    margin: 5px 0;
+    word-wrap: break-word; /* Break long words to avoid overflow */
+    white-space: normal; /* Ensure normal text wrapping */
+    overflow-wrap: break-word; /* Ensure long unbroken strings wrap */
+    
+}
+
+.comments_time {
+    text-align: right;
+}
+.comments hr {
+    border: 0;
+    border-top: 1px solid #ddd; /* Style for the horizontal line */
+    margin: 10px 0; /* Margin above and below the line */
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     .navbar-menu {

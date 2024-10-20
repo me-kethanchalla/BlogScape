@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from blogs.views import home, write
+from blogs.views import home, write, blog_detail
 from user.views import register, profile
 from django.contrib.auth import views as auth_view
 
@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/',home, name = 'BlogPage'),
     path('writetheblog', write, name = 'WriteBlogPage'),
+    path('blog/<int:blog_id>/', blog_detail, name='BlogDetail'),
     path('register/',register, name='RegisterPage'  ),
     path('profile/',profile, name='ProfilePage'  ),
     path('', auth_view.LoginView.as_view(template_name ='user/login.html'), name='LoginPage'),

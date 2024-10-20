@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ blog.title }}</title>
+    <link rel="stylesheet" href="{% static 'blogs/css/detail.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-brand">BlogScape</div>
+        <ul class="navbar-menu">
+            <li><a href="{% url 'BlogPage' %}">Home</a></li>
+            <li><a href="{% url 'ProfilePage' %}">Profile</a></li>
+            <form action="{% url 'LogoutPage' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="blogpost">
+            <div class="title">
+                <h2>{{ blog.title }}</h2>
+            </div>
+    
+            <div class="content">
+                {{ blog.content }}
+            </div>
+    
+            <div class="other_details">
+                By {{ blog.author_name }}<br>
+                <small>On {{ blog.time }}</small><br>
+            </div>
+        </div>
+    
+        <h3 class="comments-heading">Comments:</h3>
+        
+        <div class="comments-section">
+            
+            <form method="POST" class="add-comment-form">
+                {% csrf_token %}
+                {{ comment_form.as_p }}
+                <button type="submit" class="submit-button">Post Comment</button>
+                <br>
+                <br>
+                <br>
+                <hr>
+            </form>
+    
+            <div class="comments">
+                {% for comment in comments %}
+                <strong>{{ comment.author_name.username }}:</strong>
+                <p>{{ comment.Add_Comment }}</p>
+                <div class="comments_time">
+                    <small>On {{ comment.time }}</small>
+                </div>
+                <hr>
+                {% empty %}
+                <p>No comments yet. Be the first to comment!</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

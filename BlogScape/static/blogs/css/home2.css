@@ -1,0 +1,212 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #71bae1, #f77878dc);
+    color: #333;
+}
+
+/* General navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #757e85;
+    padding: 15px 20px;
+}
+
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    margin: 0px;
+    font-size: 40px;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-menu li {
+    margin: 0 15px;
+}
+
+/* Styling for the link and button to look the same */
+.navbar-menu a,
+.navbar-menu button {
+    display: inline-block;
+    background-color: #555;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+.navbar-menu a:hover,
+.navbar-menu button:hover {
+    background-color: #f77878dc;
+    transform: scale(1.1);
+}
+
+/* Ensuring the button looks like a link */
+.navbar-menu button {
+    cursor: pointer;
+}
+
+.navbar-menu form {
+    display: inline;
+}
+
+.blogpost {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.blogpost:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.blogpost .title {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.blogpost .title h2 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #3a6186;
+}
+
+.blogpost .content {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #494646;
+}
+.blogpost .other_details {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    color: #617077;
+}
+
+/* Styling for the Show Comments button */
+.show-comments {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    margin-right: auto; /* Align to the left */
+    text-decoration: none;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.show-comments:hover {
+    background-color:#f77878dc;
+    color: #fff;
+}
+
+/* Author name and time styling */
+.author-details {
+    text-align: right;
+    font-size: 0.85rem;
+    color: #333;
+}
+
+.author-details .author-name,
+.author-details .post-time {
+    display: block; /* Display name and time in separate lines */
+}
+.note {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.container {
+    text-align: center;
+}
+
+.write-button {
+    display: inline-block;
+    text-align: center;
+    padding: 1rem 2rem;
+    margin: 20px;
+    font-size: 1.1rem;
+    color: rgb(53, 53, 53);
+    background-color: #ece7e7;
+    text-decoration: none;
+    border: 5px solid #4e4e4e;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+    box-shadow: #333;
+    transition: background-color 0.3s;
+}
+
+.write-button:hover {
+    background-color: #928181;
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
+    padding: 0.8rem;
+    background-color: #f77878dc;
+    color: #fff;
+    font-size: 1rem;
+    margin-left: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #71bae1;
+    transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar-menu {
+        flex-direction: column;
+    }
+
+    .navbar-menu li {
+        margin: 10px 0;
+    }
+
+    .blogpost {
+        padding: 15px;
+    }
+
+    .blogpost .title h2 {
+        font-size: 1.5em;
+    }
+
+    .note {
+        font-size: 0.85em;
+    }
+
+    .write-button {
+        padding: 0.8rem 1.5rem;
+    }
+}

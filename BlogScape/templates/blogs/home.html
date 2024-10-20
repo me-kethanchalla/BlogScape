@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="{% static 'blogs/css/home3.css' %}">
+    <link rel="stylesheet" href="{% static 'blogs/css/home2.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -42,9 +42,13 @@
         </div>
             
         <div class="other_details">
-             By {{ i.author_name }}<br>
-             <small>On {{ i.time }}</small><br>
+            <a href="{% url 'BlogDetail' i.id %}" class="show-comments">Show Comments</a>
+            <div class="author-details">
+                <span class="author-name">By {{ i.author_name }}</span>
+                <span class="post-time"><small>On {{ i.time }}</small></span>
+            </div>
         </div>
+        
     </div>
     {% endfor %}
     {% endblock content %}
