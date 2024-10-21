@@ -89,16 +89,16 @@ Ensure you have the following installed on your machine:
 
  **Make migrations and migrate the database**:
 
-    ```bash
+    
     python manage.py makemigrations
     python manage.py migrate
-    ```
+    
 
 #### If you need to access the admin view
  **Create a superuser (admin)**:
 
-    ```bash
+    
     python manage.py createsuperuser
-    ```
+    
 
 
